@@ -1,63 +1,61 @@
 <!DOCTYPE HTML>
 <html>
-      <head>
-         <meta charset="utf-8"/>
-         <title> Web development </title>
-         <link rel="stylesheet" type="text/css" href="style.css"
-      </head>
-      <body>
-          <div id="wrapper">
-              <div id="profile-area">
-                <div id="side-profile" class="side-box"><a>kenneh_254</a></div>
-                <div id="side-all" class="side-box"><a>Community</a></div>
-                <div id="following" class="side-box">
-                   <h3>Following</h3>
-                   <div class="boxcontent">
-                       <div><a class="filter-user">kylie shiru</a></div>
-                       <div><a class="filter-user">Sylviahh nduati</a></div>
-                       <div><a class="filter-user">susan nzomo</a></div>
-                   </div>
-                </div>
-               <div id="followers" class="side-box">
-                   <h3>Follows you</h3>
-                   <div class="boxcontent">
-                       <div><a class="filter-user">kylie</a></div>
-                       <div><a class="filter-user">Sylviah</a></div>
-                       <div><a class="filter-user">susan</a></div>
-                       <div><a class="filter-user">sofia</a></div>
-					    <div><a class="filter-user">jojo</a></div>
-                   </div>
-               </div>
+  <head>
+    <meta charset="utf-8" />
+    <title>Simple Social networking site with mongodb and meteorjs</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div id="wrapper">
+        <div id="profile-area">
+          <div id="side-profile" class="side-box"><a>Username</a></div>
+          <div id="side-all" class="side-box"><a>Community</a></div>
+          <div id="side-youlike" class="side-box">
+            <h3>Following</h3>
+            <div class="boxcontent">
+              <div><a class="filter-user">Kennedy Wanjahi</a></div>
+              <div><a class="filter-user">Sylviah Nduati</a></div>
+              <div><a class="filter-user">Ann wanjiku</a></div>
+            </div>
           </div>
-          <div id="feeds">
-              <form id="form">
-                  <textarea></textarea>
-                  <button type"submit"> Say </button>
-              </form>
-                  <ul class="posts-list">
-                      <li class="posts">
-                          <div>post</div>
-                          <div>Author<a>Follow</a></div>
-                      </li>
-                      <li class="posts">
-                          <div>post</div>
-                          <div>Author<a>Follow</a></div>
-                      </li>
-                      <li class="posts">
-                          <div>post</div>
-                          <div>Author<a>Follow</a></div>
-                      </li>
-                      <li class="posts">
-                          <div>post</div>
-                          <div>Author<a>Follow</a></div>
-                      </li>
-                      <li class="posts">
-                          <div>post</div>
-                          <div>Author<a>Follow</a></div>
-                      </li>
-                  </ul>
-              </form>
+          <div id="side-likeyou" class="side-box">
+            <h3>Follows You</h3>
+            <div class="boxcontent">
+              <div><a class="filter-user">fariazz</a></div>
+              <div><a class="filter-user">example</a></div>
+              <div><a class="filter-user">example</a></div>
+              <div><a class="filter-user">example3</a></div>
+            </div>
           </div>
         </div>
-     </body>
+        <div id="feed-area">
+          <form id="post-form">
+            <textarea id="content"></textarea>
+            <button type="submit">Say</button>
+          </form>
+          <ul class="post-list">
+            <li class="post">
+              <div>This is the content of a social network post by some person</div>
+              <div>Author <a>Follow</a></div>
+            </li>
+            <li class="post">
+              <div>This is the content of a social network post by some person</div>
+              <div>Author <a>Follow</a></div>
+            </li>
+            <li class="post">
+              <div>This is the content of a social network post by some person</div>
+              <div>Author <a>Follow</a></div>
+            </li>
+            <li class="post">
+              <div>This is the content of a social network post by some person</div>
+              <div>Author <a>Follow</a></div>
+            </li>
+            <li class="post">
+              <div>This is the content of a social network post by some person</div>
+              <div>Author <a>Follow</a></div>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </body>
 </html>
