@@ -1,7 +1,6 @@
 <head>
   <meta charset="utf-8" />
     <title>Simple Social networking site with mongodb and meteorjs</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
     <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
 </head>
 
@@ -29,48 +28,27 @@
           </div>
         </div>
         <div id="feed-area">
-          <form id="post-form">
-            <textarea id="content"></textarea>
-            <button type="submit">Say</button>
-          </form>
-          <ul class="post-list">
-            <li class="post">
-              <div>This is the content of a social network post by some person</div>
-              <div>Author <a>Follow</a></div>
-            </li>
-            <li class="post">
-              <div>This is the content of a social network post by some person</div>
-              <div>Author <a>Follow</a></div>
-            </li>
-            <li class="post">
-              <div>This is the content of a social network post by some person</div>
-              <div>Author <a>Follow</a></div>
-            </li>
-            <li class="post">
-              <div>This is the content of a social network post by some person</div>
-              <div>Author <a>Follow</a></div>
-            </li>
-            <li class="post">
-              <div>This is the content of a social network post by some person</div>
-              <div>Author <a>Follow</a></div>
-            </li>
-          </ul>
+          {{> postForm}}
+          {{> postList}}
         </div>
     </div>
-  <h1>Meteor Motherfuckers</h1>
-  {{> postForm}}
-  {{> postList}}
+
+
 </body>
 <template name="postForm">
-<form>
-  <textarea id="content" required></textarea>
-<button type="submit"> Say</button>
-</form>
+  <form id="post-form">
+    <textarea id="content"></textarea>
+    <button type="submit">Say</button>
+  </form>
 </template>
 <template name="postList">
-<ul>
+<ul class="post-list">
   {{#each posts}}
-  <li>{{content}}</li>
+  <li class="post">
+    <div>{{content}}</div>
+    <div>Author <a>Follow</a></div>
+  </li>
+
   {{/each}}
 </ul>
 </template>
