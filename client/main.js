@@ -17,12 +17,8 @@ Template.postForm.events({
   'submit form': function(event){
     event.preventDefault();
     var content = document.getElementById('content').value;
-    var username = Meteor.user().username;
-    Post.insert({
-      content: content,
-      created: new Date(),
-      username: username
-    });
+    //call meteor methods
+    Meteor.call('addPost', content);
     event.target.reset();
   }
 })
