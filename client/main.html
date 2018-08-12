@@ -9,9 +9,13 @@
   {{>loginButtons}}
   <div id="wrapper">
         <div id="profile-area">
+          {{#if currentUser}}
           <div id="side-profile" class="side-box"><a>Username: Kennedy Wanjahi</a></div>
+            {{/if}}
           <div id="side-all" class="side-box"><a>Community: Atlassian Nairobi</a></div>
+          {{#if currentUser}}
           <div id="side-youlike" class="side-box">
+
             <h3>Following</h3>
             <div class="boxcontent">
               <div><a class="filter-user">Kennedy Wanjahi</a></div>
@@ -28,9 +32,12 @@
               <div><a class="filter-user">example3</a></div>
             </div>
           </div>
+          {{/if}}
         </div>
         <div id="feed-area">
+          {{#if currentUser}}
           {{> postForm}}
+          {{/if}}
           {{> postList}}
         </div>
     </div>
