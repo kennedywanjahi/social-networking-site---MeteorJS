@@ -1,10 +1,12 @@
 <head>
   <meta charset="utf-8" />
     <title>Simple Social networking site with mongodb and meteorjs</title>
+    <link rel="icon" href="favicon.ico" type="icon">
+    <link rel="icon" href="https://www.modern.co.ke/images/favicon.png" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
 </head>
-
 <body>
+  {{>loginButtons}}
   <div id="wrapper">
         <div id="profile-area">
           <div id="side-profile" class="side-box"><a>Username: Kennedy Wanjahi</a></div>
@@ -46,7 +48,7 @@
   {{#each posts}}
   <li class="post">
     <div>{{content}}</div>
-    <div>Author <a>Follow</a></div>
+    <div>kenneh_254 <a>Follow</a></div>
   </li>
 
   {{/each}}
