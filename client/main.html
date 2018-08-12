@@ -6,11 +6,13 @@
     <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  {{>loginButtons}}
+
   <div id="wrapper">
         <div id="profile-area">
           {{#if currentUser}}
-          <div id="side-profile" class="side-box"><a>Username: {{currentUser.username}}</a></div>
+          <div id="side-profile" class="side-box">Logged In As: {{>loginButtons}}</div>
+          {{else}}
+          <div id="side-profile" class="side-box">Click Here to Log in: {{>loginButtons}}</div>
             {{/if}}
           <div id="side-all" class="side-box">Community: Atlassian Nairobi</div>
           {{#if currentUser}}
