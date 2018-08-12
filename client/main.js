@@ -9,7 +9,7 @@ Accounts.ui.config({
 
 Template.postList.helpers({
   posts: function(){
-    return Post.find();
+    return Post.find({}, {sort: {created: -1}});
   }
 })
 
@@ -17,8 +17,12 @@ Template.postForm.events({
   'submit form': function(event){
     event.preventDefault();
     var content = document.getElementById('content').value;
-    console.log(content);
-    Post.insert({content: content, created: new Date()});
+    var username = Meteor.user().username;
+    Post.insert({
+      content: content,
+      created: new Date(),
+      username: username
+    });
     event.target.reset();
   }
 })
