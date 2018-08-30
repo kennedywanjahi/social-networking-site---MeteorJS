@@ -58,10 +58,9 @@
   <div id="side-likeyou" class="side-box">
     <h3>Follows You</h3>
     <div class="boxcontent">
-      <div><a class="filter-user">fariazz</a></div>
-      <div><a class="filter-user">example</a></div>
-      <div><a class="filter-user">example</a></div>
-      <div><a class="filter-user">example3</a></div>
+      {{# each followers}}
+      <div><a class="filter-user">{{followers}}</a></div>
+      {{/each}}
     </div>
   </div>
   {{/if}}

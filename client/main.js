@@ -34,5 +34,11 @@ Template.profileArea.helpers({
   following: function(){
     var user = Meteor.user();
     return user.profile.follow;
+  },
+  followers: function(){
+    var user = Meteor.user();
+    var followers = Meteor.users.find({'profile.follow': {$in: [user.username]}});
+    return followers.fetch();
+
   }
 })
