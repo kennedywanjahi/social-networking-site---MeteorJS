@@ -11,7 +11,15 @@ Template.postList.helpers({
   posts: function(){
     return Post.find({}, {sort: {created: -1}});
   }
-})
+});
+Template.postList.events({
+  'click .follow-link': function(event){
+    event.preventDefault();
+
+
+    Meteor.call('follow', this);
+  }
+});
 
 Template.postForm.events({
   'submit form': function(event){
@@ -20,5 +28,11 @@ Template.postForm.events({
     //call meteor methods
     Meteor.call('addPost', content);
     event.target.reset();
+  }
+});
+Template.profileArea.helpers({
+  following: function(){
+    var user = Meteor.user();
+    return user.profile.follow;
   }
 })

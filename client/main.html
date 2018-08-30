@@ -9,32 +9,7 @@
 
   <div id="wrapper">
         <div id="profile-area">
-          {{#if currentUser}}
-          <div id="side-profile" class="side-box">Logged In As: {{>loginButtons}}</div>
-          {{else}}
-          <div id="side-profile" class="side-box">Click Here to Log in: {{>loginButtons}}</div>
-            {{/if}}
-          <div id="side-all" class="side-box">Community: Atlassian Nairobi</div>
-          {{#if currentUser}}
-          <div id="side-youlike" class="side-box">
-
-            <h3>Following</h3>
-            <div class="boxcontent">
-              <div><a class="filter-user">Kennedy Wanjahi</a></div>
-              <div><a class="filter-user">Sylviah Nduati</a></div>
-              <div><a class="filter-user">Ann wanjiku</a></div>
-            </div>
-          </div>
-          <div id="side-likeyou" class="side-box">
-            <h3>Follows You</h3>
-            <div class="boxcontent">
-              <div><a class="filter-user">fariazz</a></div>
-              <div><a class="filter-user">example</a></div>
-              <div><a class="filter-user">example</a></div>
-              <div><a class="filter-user">example3</a></div>
-            </div>
-          </div>
-          {{/if}}
+          {{ >profileArea}}
         </div>
         <div id="feed-area">
           {{#if currentUser}}
@@ -57,9 +32,37 @@
   {{#each posts}}
   <li class="post">
     <div>{{content}}</div>
-    <div>{{username}} <a>Follow</a></div>
+    <div>{{username}} <a class="follow-link">Follow</a></div>
   </li>
 
   {{/each}}
 </ul>
+</template>
+<template name="profileArea">
+  {{#if currentUser}}
+  <div id="side-profile" class="side-box">Logged In As: {{>loginButtons align="right"}}</div>
+  {{else}}
+  <div id="side-profile" class="side-box">Click Here to Log in: {{>loginButtons}}</div>
+    {{/if}}
+  <div id="side-all" class="side-box">Community: Atlassian Nairobi</div>
+  {{#if currentUser}}
+  <div id="side-youlike" class="side-box">
+
+    <h3>Following</h3>
+    <div class="boxcontent">
+      {{#each username in following}}
+      <div><a class="filter-user">{{username}}</a></div>
+      {{/each}}
+    </div>
+  </div>
+  <div id="side-likeyou" class="side-box">
+    <h3>Follows You</h3>
+    <div class="boxcontent">
+      <div><a class="filter-user">fariazz</a></div>
+      <div><a class="filter-user">example</a></div>
+      <div><a class="filter-user">example</a></div>
+      <div><a class="filter-user">example3</a></div>
+    </div>
+  </div>
+  {{/if}}
 </template>
